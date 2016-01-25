@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Object Prototypes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="container"></div>
+        <script>
+            function calandarEvent(eventType, eventName, time, period,
+            lengthHour, lengthMinute) {
+                this.eventType = eventType;
+                this.eventName = eventName;
+                this.time = time;
+                this.period = period;
+                this.lengthHour = lengthHour;
+                this.lengthMinute = lengthMinute;
+            }
+            var wakeUp = new calandarEvent("Reminder", "Wake Up", 7, "AM",
+            0, 0);
+            var output = "";
+                output += wakeUp.eventType + ": " + wakeUp.eventName + " at " +
+                        wakeUp.time + wakeUp.period + ". " +
+                        wakeUp.eventName + " is planned to take " + 
+                        wakeUp.lengthHour;
+                
+                if (wakeUp.lengthHour === 1)
+                    output += " hour and ";
+                else
+                    output += " hours and ";
+                
+                output += wakeUp.lengthMinute;
+                
+                if (wakeUp.lengthMinute === 1)
+                    output += " minute.";
+                else
+                    output += " minutes.";
+                
+            document.getElementById("container").innerHTML = output;
+        </script>
+    </body>
+</html>
