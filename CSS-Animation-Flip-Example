@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        document.querySelector("#myCard").classList.toggle("flip")
+    </script>
+    <style> 
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+    background-color: greenyellow;
+}
+
+.flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
+	transform: rotateY(180deg);
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+    </style>
+</head>
+<body>
+
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+                    <p>Why is it green?</p>
+		</div>
+		<div class="back">
+                    <p>The most common reason for green stool is a dietary habit 
+                        or change. Dark green vegetables contain a lot of chlorophyll, 
+                        the chemical that allows plants to make energy from the sun. 
+                        This can turn your Cleveland Brown into a Green Bay Packer.
+                        It could also be from foods that contain food coloring that doesn’t get processed properly. But sometimes green poop isn't just from your 
+                        experimentation with green eggs and hams. Besides diarrhea, 
+                        there are underlying medical conditions that can drastically 
+                        alter your bowel movements such as bacterial invaders, 
+                        antibiotics, etc. However, those conditions will come with 
+                        other symptoms besides green poop, so a little tint to your 
+                        poo won’t be the first thing you notice is awry.
+                    </p>
+		</div>
+            <div class="flip">
+                
+            </div>
+	</div>
+    </div>
+
+</body>
+</html>
