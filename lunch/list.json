@@ -1,0 +1,7 @@
+{
+var sandwich = ["pb&j","ham & cheese","BLT", "Turkey Wrap", "grilled cheese"];
+var fruit = ["apple","plumb","grape", "orange", "banana", "grapes","cherries","kiwi"];
+var treat = ["cookie","candy","chips","fruit roll up","goldfish","cheese","fruit snacks"]
+var drink = ["milk","water","apple juice","kool-aid","soda","tang"]
+var obj5 = { arr1:sandwich, arr2:fruit, arr3:treat, arr4:drink }; 
+}
